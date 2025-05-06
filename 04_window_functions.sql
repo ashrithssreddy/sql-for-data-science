@@ -50,7 +50,7 @@ where drat_rank < 4
 
 
 
---------------------------------------  window frame rows --------------------------------------  
+--------------------------------------  window aggregation frame=Rows --------------------------------------  
 -- select *, window_function() over (parition by __ order by __ window_frame) as newcol 
 -- from my_table
 
@@ -164,7 +164,7 @@ select cyl, mpg, wt, vs,
 from learn.dbo.mtcars
 order by cyl, mpg, wt
 
---------------------------------------  window frame Range --------------------------------------  
+--------------------------------------  window aggregation frame=Range --------------------------------------  
 -- current row has month=4. So window is month=3 + month=4 + month=5
 -- RANGE is only supported with UNBOUNDED and CURRENT ROW window frame delimiters.
 -- n preceding or n following not allowed
@@ -191,7 +191,7 @@ from learn.dbo.mtcars
 order by carb
 
 
---------------------------------------  window frame groups --------------------------------------  
+--------------------------------------  window aggregation frame=groups --------------------------------------  
 -- groups between 1 preceeding and 1 following
 -- month contains 1, 2, 4 (current row), 5
 -- current row has month=4. So window is month=2 + month=4 + month=5
