@@ -228,7 +228,7 @@ order by carb
 -- lead(), lag(), ntile(), first_value(), last_value(), nth_value()
 
 ---------------------------- lead and lag ---------------------------- 
--- lead or lead(1): 1 NULL value in the end
+-- lead or lead(1): 1 NULL value in the end/last/bottom
 -- The function 'lag' must have an OVER clause.
 -- use all the leading values
 -- over(order by) - mandatory template
@@ -245,7 +245,7 @@ select cyl, mpg, wt, disp,
 	lead(disp, 2) over (order by cyl, mpg, wt) as lead_disp
 from learn.dbo.mtcars
 
--- lag or lag(1): 1 NULL value in the end
+-- lag or lag(1): 1 NULL value in the top/beginning
 -- use all the lagging values
 -- over(order by) - mandatory template
 select cyl, mpg, wt, disp,
